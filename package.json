@@ -15,7 +15,7 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.7",
-    "opn": "^6.0.0",
+    "open": "^8.0.6",
     "youtube-api": "^3.0.1"
   }
 }
