@@ -6,4 +6,4 @@ import { masterChefId } from './channelIds.js';
 
 dotenv.config();
 
-openLastProgram(masterChefId, ['Programa', 'MasterChef Argentina 2021'])
+openLastProgram(masterChefId, ['Programa', 'MasterChef Argentina 2021']);

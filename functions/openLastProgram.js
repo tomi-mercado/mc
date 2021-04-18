@@ -1,9 +1,9 @@
-import open from 'opn';
+import open from 'open';
 
 import getChannelDetailsById from './getChannelDetailsById.js';
 import getPlaylistItemsById from './getPlaylistItemsById.js';
 
-const openLastProgram = async (channelId, keywords) => {
+const openLastProgram = async (channelId, keywords = []) => {
     const channelDetails = await getChannelDetailsById(channelId);
     const playlistId = channelDetails.data.items[0].contentDetails.relatedPlaylists.uploads;
     const playlistItems = await getPlaylistItemsById(playlistId);
