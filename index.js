@@ -1,24 +1,13 @@
 #! node
-const Youtube = require("youtube-api");
-const open = require('opn');
-require('dotenv').config()
+import open from 'opn';
+import dotenv from 'dotenv';
+
+import getChannelDetailsById from './functions/getChannelDetailsById.js';
+import getPlaylistItemsById from './functions/getPlaylistItemsById.js';
+
+dotenv.config();
 
 const masterChefId = 'UCsf7o62bd1t0zy8csOPm1xg';
-
-const getChannelDetailsById = (id) => Youtube.channels.list({
-    part: 'contentDetails',
-    maxResults: 50,
-    chart: 'mostPopular',
-    id,
-    auth: process.env.YOUTUBE_API_KEY,
-});
-
-const getPlaylistItemsById = (id) => Youtube.playlistItems.list({
-    part: 'snippet',
-    playlistId: id,
-    maxResults: 50,
-    auth: process.env.YOUTUBE_API_KEY,
-});
 
 (async () => {
     const channelDetails = await getChannelDetailsById(masterChefId);
